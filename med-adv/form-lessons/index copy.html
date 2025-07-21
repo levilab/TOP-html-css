@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My test page</title>
+  </head>
+  <body>
+    <!-- <p>This is my page</p> -->
+    <!-- <form>
+       <fieldset>
+            <legend>Choose all the vegetables you like to eat</legend>
+            <ul>
+                <li>
+                    <label for="carrots">Carrots</label>
+                    <input
+                        type="checkbox"
+                        id="carrots"
+                        name="vegetable"
+                        value="carrots"
+                        />
+                </li>
+                <li>
+                    <label for="peas">Peas</label>
+                    <input type="checkbox" id="peas" name="vegetable" value="peas" />
+                </li>
+                <li>
+                    <label for="cabbage">Cabbage</label>
+                    <input type="checkbox" id="cabbage" name="vegetable" value="cabbage" />
+                </li>
+            </ul>
+        </fieldset>
+        <style>
+            input:default {
+                border: none;
+                outline: 2px solid deeppink;
+            }
+        </style>
+    </form> -->
+    <form>
+    <p>How did you find out about us?</p>
+    <label>
+        <input name="origin" type="radio" value="google" checked /> 
+        Google
+    </label>
+    <label>
+        <input name="origin" type="radio" value="facebook" /> 
+        Facebook 
+    </label>
+    
+    <p>Please agree to our terms:</p>
+
+    <label>
+        <input name="newsletter" type="checkbox" checked /> I want to subscribe to
+        a personalized newsletter.
+    </label>
+
+    <label
+        ><input name="privacy" type="checkbox" /> I have read and I agree to the
+        Privacy Policy.</label
+    >
+
+    <input type="submit" value="Submit form" />
+    </form>
+    <style>
+        label,
+        input[type="submit"] {
+        display: block;
+        margin-top: 1em;
+        }
+
+        input:default {
+        border: none;
+        outline: 2px solid deeppink;
+        }
+
+    </style>
+  </body>
+</html>

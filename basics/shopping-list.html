@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+    const list = document.querySelector("ul");
+    const input = document.querySelector("input");
+    const btn = document.querySelector("button");
+
+    // Every time button is clicked, the input value is extracted to a variable
+    btn.addEventListener("click", () => {
+      const myItem = input.value;   // value is input's property
+      input.value = '';
+
+    // set up framework after clicking "Add item"
+
+    // item must be listed
+    const listItem = document.createElement("li");
+    // item name, which is the variable containing the extracted value above
+    const listText = document.createElement("span");
+    // button is expected to be inline with the item name - text type
+    const listBtn = document.createElement("button");
+    // both elements "span" & "button" are children of the element "li"
+    listItem.append(listText);
+    listText.textContent = myItem;
+
+    listItem.append(listBtn);
+    listBtn.textContent = "Delete";
+
+    list.appendChild(listItem);
+
+    listBtn.addEventListener("click", () => 
+      {list.removeChild(eachItem);});
+    input.focus();
+    });
+    </script>
+  </body>
+</html>
