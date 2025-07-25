@@ -3,77 +3,63 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>My test page</title>
-  </head>
-  <body>
-    <!-- <p>This is my page</p> -->
-    <!-- <form>
-       <fieldset>
-            <legend>Choose all the vegetables you like to eat</legend>
-            <ul>
-                <li>
-                    <label for="carrots">Carrots</label>
-                    <input
-                        type="checkbox"
-                        id="carrots"
-                        name="vegetable"
-                        value="carrots"
-                        />
-                </li>
-                <li>
-                    <label for="peas">Peas</label>
-                    <input type="checkbox" id="peas" name="vegetable" value="peas" />
-                </li>
-                <li>
-                    <label for="cabbage">Cabbage</label>
-                    <input type="checkbox" id="cabbage" name="vegetable" value="cabbage" />
-                </li>
-            </ul>
-        </fieldset>
-        <style>
-            input:default {
-                border: none;
-                outline: 2px solid deeppink;
-            }
-        </style>
-    </form> -->
-    <form>
-    <p>How did you find out about us?</p>
-    <label>
-        <input name="origin" type="radio" value="google" checked /> 
-        Google
+    <title>example</title>
+     
+<body>
+  <form>
+  <p>
+    <label for="mail">
+      <span>Please enter an email address:</span>
+      <input type="email" id="mail" name="mail" required minlength="8" />
+      <span class="error" aria-live="polite"></span>
     </label>
-    <label>
-        <input name="origin" type="radio" value="facebook" /> 
-        Facebook 
-    </label>
-    
-    <p>Please agree to our terms:</p>
+  </p>
+  <button>Submit</button>
+  </form>
 
-    <label>
-        <input name="newsletter" type="checkbox" checked /> I want to subscribe to
-        a personalized newsletter.
-    </label>
 
-    <label
-        ><input name="privacy" type="checkbox" /> I have read and I agree to the
-        Privacy Policy.</label
-    >
+  <script>
+    const form = document.querySelector("form");
+    const email = document.getElementById("mail");
+    const emailError = document.querySelector("#mail + span.error");
 
-    <input type="submit" value="Submit form" />
-    </form>
-    <style>
-        label,
-        input[type="submit"] {
-        display: block;
-        margin-top: 1em;
-        }
+    email.addEventListener("input", (event) => {
+    if (email.validity.valid) {
+      emailError.textContent = ""; // Remove the message content
+      emailError.className = "error"; // Removes the `active` class
+    } else {
+      // If there is still an error, show the correct error
+      showError();
+    }
+  });
 
-        input:default {
-        border: none;
-        outline: 2px solid deeppink;
-        }
+    form.addEventListener("submit", (event) => {
+      // if the email field is invalid
+      if (!email.validity.valid) {
+        // display an appropriate error message
+        showError();
+        // prevent form submission
+        event.preventDefault();
+      }
+    });
 
-    </style>
-  </body>
+    function showError() {
+      if (email.validity.valueMissing) {
+        // If empty
+        emailError.textContent = "You need to enter an email address.";
+      } else if (email.validity.typeMismatch) {
+        // If it's not an email address,
+        emailError.textContent = "Entered value needs to be an email address.";
+      } else if (email.validity.tooShort) {
+        // If the value is too short,
+        emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
+      }
+      // Add the `active` class
+      emailError.className = "error active";
+    }
+
+
+  </script>
+</body>
+
 </html>
