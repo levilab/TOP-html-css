@@ -1,0 +1,53 @@
+@font-face {
+    font-family: sans-serif ;
+    src: url(./fonts/Norse-Bold.otf);
+}
+body {
+    background-color: darkgray;
+    border: 1px solid red;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0 12em;
+    padding: 0;
+}
+
+img {
+    min-width: 33%;
+    object-fit:cover;
+}
+
+
+.main-content {
+    display: block;
+    min-width: 66%;
+    /* align-items: center; */
+    justify-content:space-evenly;
+}
+
+span {
+    font-style: italic;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    height: 33%;
+    background-color: lightgray;
+    font-weight: bold;
+    justify-content: flex-end;
+}
+
+
+form {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2em;
+}
+form div {
+    text-align: left;
+}
+form div label {
+    display: block;
+}
