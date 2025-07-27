@@ -8,12 +8,18 @@
 
 </head>
 <body>
-    <img src="images/leaf.jpg" alt="wet leaf">
+    <div class="parent">
+        <img src="images/leaf.jpg" alt="wet leaf" class="image1">
+        <div class="logo">
+            <img src ="images/odin-lined.png" alt="odin logo" class="image2">
+            <p>Odin</p>
+        </div>
+    
     </div>
     <div class="main-content">
         <div class="intro">
             <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <span>now</span> to get started</p>
-            <p>You <span>know</span> you want to</p>
+            <p>You <span>know</span> you want to.</p>
         </div>
         <div class="detail">
             <h2> Let's do this!</h1>
@@ -29,7 +35,7 @@
                 </p>
                     <p>
                     <label for="pw">Password</label>
-                    <input type="password" id="pw" name="password">
+                    <input type="password" id="pw" name="password" minlength="8" required>
                 </p>
 
                 </div>
@@ -47,13 +53,16 @@
                     
                     <p>
                         <label for="cf-pw">Confirm Password</label>
-                        <input type="password" id="cf-pw" name="confirm-password">
+                        <input type="password" id="cf-pw" name="confirm-password" minlength="8" required>
                     </p>
                 </div>
 
             </form>
         </div>
-        <div class="login">placeholder</div>
+        <div class="login">
+            <button type="submit">Create Account</button>
+            <p>Already have an account? <a href="">Log in</a></p>
+        </div>
     </div>
 </body>
 </html>

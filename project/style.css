@@ -1,30 +1,69 @@
 @font-face {
-    font-family: "norsebold" ;
+    font-family: "RobotoMono" ;
     src: 
-    url("./fonts/norse-bold-webfont.woff") format("woff"),
-    url("./fonts/norse-bold-webfont.woff2") format("woff2");
+    url("./fonts/RobotoMono-VariableFont_wght.woff") format("woff"),
+    url("./fonts/RobotoMono-VariableFont_wght.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Odin Spear";
+    src: 
+    url("./fonts/odins\ spear.woff") format("woff"),
+    url("./fonts/odins\ spear.woff2") format("woff2");
 }
 body {
-    background-color: rgb(54, 52, 52);
-    border: 1px solid red;
+    background-color: rgb(34, 33, 33);
+    /* border: 1px solid red; */
     display: flex;
     min-height: 100vh;
-    margin: 0.5em 12em;
+    margin: 0 18em;
     padding: 0;
-    font-family: "norsebold";
+    font-family: "RobotoMono";
 }
 
-img {
-    min-width: 33%;
-    object-fit:cover;
+.parent {
+    position: relative;
+    min-width: 35%;
+
 }
+.image1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+
+}
+.logo {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 15em;
+    width: 100%;
+    color: white;
+    font-family: "Odin Spear";
+    font-weight: bold;
+    background-color: rgb(0, 0, 0,0.5);
+    gap: 1em;
+}
+
+.logo img {
+    width: 20%;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 78px;
+
+}
+
 
 
 .main-content {
     display: flex;
     flex-direction: column;
-    min-width: 66%;
-    flex-grow: 1;
+    min-width: 65%;
     min-height: 100vh;
 }
 
@@ -33,41 +72,96 @@ span {
 }
 
 .intro {
-    display: flex;
-    flex-direction: column;
     background-color: whitesmoke;
     font-weight: bold;
-    justify-content: flex-end;
     padding: 2em;
     font-size: 1.2em;
-    flex: 1;
 }
 
+.intro p {
+    width: 90%;
+}
+
+.intro p + p{
+    color: red;
+}
+
+.intro p:first-child {
+    margin-top: 8em;
+}
 
 form {
     display: flex;
     justify-content: flex-start;
-    gap: 2em;
+    gap: 4em;
 }
-h1 {
-    flex: 1;
+h2 {
+    margin: 0;
 }
 .detail {
     position: relative;
-    background-color: wheat;
-    padding: 2em;
-    /* box-shadow: 0px 10px 20px red; */
-    box-shadow: 0px 10px 10px red;
-    margin-bottom: -5px;
+    background-color: whitesmoke;
+    padding: 1.2em 2em;
+    box-shadow: 0px 4px 12px -8px gray;
+    /* margin-bottom: -5px; */
 }
 form div {
     text-align: left;
 }
 form div label {
     display: block;
+    margin-bottom: 5px;
+
+
+}
+input {
+    border-radius: 4px;
+    border: 1px solid #E5E7EB;
+    padding: 0.5em;
+    width: 225px;
+    letter-spacing: 0.5px;
+}
+
+input:focus {
+    box-shadow: 2px 2px 3px gray;
+    outline: none;
+    border-color: blue;
+
+}
+
+input[type="password"]:invalid {
+    border-color: red;
 }
 
 .login {
     background-color: whitesmoke;
     flex: 1;
 }
+
+.login {
+    padding: 2em;
+}
+
+button {
+    width: 225px;
+    height: 48px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #596D48;
+    border: 0px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 10px -2px gray;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+a:link {
+    color: #596D48;
+}
+
+a:visited {
+    color: #596D48;
+  }
